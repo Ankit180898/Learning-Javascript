@@ -20,4 +20,10 @@ console.log(firstName + ' ' + lastName);
 // Loosely typed = dont need to declare type
 let age = 30;
 let height = 6.2;
+height++;
 console.log(age+height);
+
+console.log(3+2*3);
+
+height=height.toString();
+console.log(typeof(height));
