@@ -27,3 +27,15 @@ console.log(3+2*3);
 
 height=height.toString();
 console.log(typeof(height));
+var a;
+// var myName = prompt("Enter your name");
+// console.log(myName);
+// alert('My name is ' + myName);
+
+var a ='3';
+var b='8';
+var temp =a;
+a=b;
+b=temp;
+console.log("a is "+a);
+console.log("b is "+b);
