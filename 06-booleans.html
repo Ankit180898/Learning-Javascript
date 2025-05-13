@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+    <h1>Booleans</h1>
+
+    <script>
+        let isLoggedIn = true;
+        console.log(isLoggedIn);
+        console.log(typeof 'true');
+        console.log(typeof true);
+         // == is used to compare the value of the variable
+        // === is used to compare the value and the type of the variable
+        console.log(5=='5.00');
+        console.log(5==='5.00');
+        // In JavaScript, 
+        // the - operator has a higher precedence than the > operator.
+        console.log(3>5-5);
+
+        if(false){
+            console.log('Hello');
+        }
+
+        else{
+            console.log('World');
+        }
+        
+
+        const a = 15;
+        const b =30;
+        if(a>=18 && b>=18){
+            console.log('a & b can drive a car');
+    
+        }else if(a<=18 && b<=18){
+            console.log('both cannot drive a car');
+        }else if(a>=18 & b<=18) {
+            console.log('b cannot drive a car');
+        }else if(a<=18 & b>=18){
+            console.log('a cannot drive a car');
+        }
+
+        
+        
+        // Logical Operators
+        // && - AND
+        // || - OR
+        // ! - NOT
+        console.log(true && true); // both should be true
+        console.log(true && false); // if one is false, the result is false
+        console.log(false && true); // if one is false, the result is false
+        console.log(false && false); // if one is false, the result is false
+        console.log(true || true); // if one is true, the result is true
+        console.log(true || false); // if one is true, the result is true
+        console.log(false || true); // if one is true, the result is true
+        console.log(false || false); // if both are false, the result is false
+        console.log(!true); // the result is false
+        console.log(!false); // the result is true
+        
+
+        // Truthy and Falsy Values
+        // In JavaScript, a value is considered truthy if it is not falsy.
+        // Falsy values are:
+        // 0, '', null, undefined, NaN, false
+        // Truthy values are:
+        // All other values are truthy.
+        const userInput = null;
+        if(userInput){
+            console.log('truthy');
+        }
+        else if(userInput === null){
+            console.log('falsy');
+        }
+        else if(userInput === undefined){
+            console.log('falsy');
+        }
+        else if(userInput === NaN){
+            console.log('falsy');
+        }
+        else if(userInput === ''){
+            console.log('falsy');
+        }
+        else if(userInput === 1){
+            console.log('truthy');
+        }
+        else if(userInput === 'hello'){
+            console.log('truthy');
+        }
+         
+        // so instead of doing calculation to 
+        // check if the cart is empty, 
+        // we can use the truthy and falsy values
+        const cartQuantity = 5;
+        if(cartQuantity){
+            console.log('cart has items');
+        }
+        else{
+            console.log('cart is empty');
+        }
+
+        // truthy and falsy also work with logical operators
+        console.log(!0); // true
+        
+        // Ternary Operator
+        // The ternary operator is a shorthand for the if-else statement.
+        // It is a conditional operator that returns a value based on a condition.
+        const age = 18;
+        const isAdult = age >= 18 ? 'adult' : 'minor';
+        console.log(isAdult);
+
+        // Guard Operator
+        // also called short circuit operator
+        // The guard operator is a shorthand for the if-else statement.
+        // It is a conditional operator that returns a value based on a condition.
+        const cartQuantity2 = 0;
+        const cartQuantity3 = cartQuantity2 ?? 10;
+        console.log(cartQuantity3);
+
+        // Default Operator
+        // The default operator is a shorthand for the if-else statement.
+        // It is a conditional operator that returns a value based on a condition.
+        const cartQuantity4 = 'INR';
+        const cartQuantity5 = cartQuantity4 || 'USD';
+        console.log(cartQuantity5);
+        
+        
+        
+        
+        
+        
+        
+        
+       
+    </script>
+</body>
+</html>
