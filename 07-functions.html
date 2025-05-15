@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Functions</h1>
+    <script>
+        function greet(name){
+            console.log('Hello ' +name);
+        }
+        greet('Ankit');
+        greet('John');
+
+        // calculate the task 
+        function calculateTax(amount){
+            return amount * 0.1;
+            
+        }
+        const tax = calculateTax(100);
+        console.log(tax);
+        const tax2 = calculateTax(200);
+        console.log(tax2);
+
+
+        // suppose we have a function that takes two arguments in 
+        // different country have different tax rate
+        // we can pass default value to the function (taxRate = 0.1)
+        // if we don't pass the argument it will take the default value
+        function calculateTaxes(amount, taxRate = 0.1){
+            return amount * taxRate;
+        }
+        const tax3 = calculateTaxes(100, 0.2);
+        console.log(tax3);
+        const tax4 = calculateTaxes(100);
+        console.log(tax4);
+
+        // if we don't pass the argument it will take the default value
+        // undefined is not a valid argument
+        // NaN - Not a number is when we multiply amount with undefined
+        
+        
+
+
+
+    </script>
+</body>
+</html>
