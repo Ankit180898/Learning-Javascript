@@ -7,6 +7,64 @@
 </head>
 <body>
     <h1>Objects</h1>
-    
+    <script>
+        const product = {
+            //property:value
+            name: 'socks',
+            price: 1090
+        };
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+        // change the value of object
+        product.name = 'cotton socks';
+        console.log(product.name);
+        // add a new property and value to the object
+        product.addNewProperty = true
+        console.log(product);
+        // remove a property from the object
+        delete product.addNewProperty;
+        console.log(product); 
+
+        const product2 = {
+            name: 'shirt',
+            ['delivery-time']: '1 day',
+            // nested object
+            rating:{
+                stars: 4.5,
+                count: 87
+
+            },
+            // when we have function inside an object it is
+            // called a Method
+            fun: function function1(){
+                console.log('function inside object');
+            }
+        };
+        console.log(product2);
+        console.log(product2.name);
+        // another way to access value of a property
+        // Bracket notation
+        console.log(product2['name']);
+        console.log(product2['delivery-time']);
+        console.log(product2.rating.stars);
+        console.log(product2['rating'].stars);
+        product2.fun();
+        const obj = {
+            a:1,
+            b:
+            {
+                c:1
+            }
+        };
+        const copy ={...obj};
+        copy.b.c=42;
+        console.log(copy);
+        console.log(obj.b.c);
+
+
+         
+
+    </script>
 </body>
 </html>
