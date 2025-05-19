@@ -43,11 +43,9 @@
       // outside the function
       let result = "";
       let computerMove = "";
-      const score = {
-        wins: 0,
-        losses: 0,
-        ties: 0
-      };
+      const score = 
+      // check if score is already in local storage
+      JSON.parse(localStorage.getItem('score'));
       function getComputerMove() {
         // function scope
         // local variables - can't be accessed
@@ -108,6 +106,11 @@
         else{
           score.ties++;
         }
+
+        // save the score to local storage
+        localStorage.setItem('score', JSON.stringify(score));
+
+
         alert(
             `You chose ${userMove}. Computer chose ${computerMove}. ${result}
              Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}

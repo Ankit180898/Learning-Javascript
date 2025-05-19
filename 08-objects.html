@@ -50,6 +50,7 @@
         console.log(product2.rating.stars);
         console.log(product2['rating'].stars);
         product2.fun();
+        // 
         const obj = {
             a:1,
             b:
@@ -58,10 +59,21 @@
             }
         };
         const copy ={...obj};
+        // the copy of the object is shallow
+        // so if we change the value of the nested object
+        // it will change the value of the original object
+
         copy.b.c=42;
         console.log(copy);
         console.log(obj.b.c);
 
+        // convert object to JSON
+        // JSON.stringify(product2);
+        console.log(JSON.stringify(product2));
+        // typeof JSON.stringify(product2) is a string
+        // convert JSON to object
+        console.log(JSON.parse(JSON.stringify(product2)));
+        // typeof JSON.parse(JSON.stringify(product2)) is an object
 
          
 
