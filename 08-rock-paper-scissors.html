@@ -31,11 +31,14 @@
     >
       Scissors
     </button>
-    <button onclick="
+    <button
+      onclick="
       score.wins=0;
       score.losses=0;
       score.ties=0;
-    ">
+      localStorage.removeItem('score');
+    "
+    >
       Reset Score
     </button>
     <script>
@@ -43,9 +46,32 @@
       // outside the function
       let result = "";
       let computerMove = "";
-      const score = 
-      // check if score is already in local storage
-      JSON.parse(localStorage.getItem('score'));
+      let score =
+        // check if score is already in local storage
+        JSON.parse(localStorage.getItem("score")) || {
+          wins: 0,
+          losses: 0,
+          ties: 0,
+        };
+
+      /*  
+      if (!score) {
+        // if not, initialize it
+        score = {
+          wins: 0,
+          losses: 0,
+          ties: 0,
+        };
+      } else {
+        // if it is, set the score to the value in local storage
+        score = {
+          wins: score.wins,
+          losses: score.losses,
+          ties: score.ties,
+        };
+      }
+        */
+
       function getComputerMove() {
         // function scope
         // local variables - can't be accessed
@@ -62,60 +88,48 @@
       }
       function getResult(userMove) {
         const computerMove = getComputerMove();
-         if (userMove === "rock") {
-            if(computerMove === 'scissors'){
-                result = 'YOU WIN';
-            }
-            else if(computerMove === 'paper'){
-                result = 'YOU LOSE';
-            }
-            else{
-                result = 'TIE';
-            }
-        } 
-        else if (userMove === "paper") {
-            if(computerMove === 'rock'){
-                result = 'YOU WIN';
-            }
-            else if(computerMove === 'scissors'){
-                result = 'YOU LOSE';
-            }
-            else{
-                result = 'TIE';
-            }
-          
+        if (userMove === "rock") {
+          if (computerMove === "scissors") {
+            result = "YOU WIN";
+          } else if (computerMove === "paper") {
+            result = "YOU LOSE";
+          } else {
+            result = "TIE";
+          }
+        } else if (userMove === "paper") {
+          if (computerMove === "rock") {
+            result = "YOU WIN";
+          } else if (computerMove === "scissors") {
+            result = "YOU LOSE";
+          } else {
+            result = "TIE";
+          }
         } else if (userMove === "scissors") {
-            if(computerMove === 'paper'){
-                result = 'YOU WIN';
-            }
-            else if(computerMove === 'rock'){
-                result = 'YOU LOSE';
-            }
-            else{
-                result = 'TIE';
-            }
-         
+          if (computerMove === "paper") {
+            result = "YOU WIN";
+          } else if (computerMove === "rock") {
+            result = "YOU LOSE";
+          } else {
+            result = "TIE";
+          }
         }
         // we update the score according to the result
-        if(result === 'YOU WIN'){
+        if (result === "YOU WIN") {
           score.wins++;
-        }
-        else if(result==='YOU LOSE'){
+        } else if (result === "YOU LOSE") {
           score.losses++;
-        }
-        else{
+        } else {
           score.ties++;
         }
 
         // save the score to local storage
-        localStorage.setItem('score', JSON.stringify(score));
-
+        localStorage.setItem("score", JSON.stringify(score));
 
         alert(
-            `You chose ${userMove}. Computer chose ${computerMove}. ${result}
+          `You chose ${userMove}. Computer chose ${computerMove}. ${result}
              Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}
             `
-          );
+        );
         return result;
         // it wont give anything after the return statement
         // console.log(result);

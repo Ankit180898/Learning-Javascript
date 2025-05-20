@@ -75,6 +75,86 @@
         console.log(JSON.parse(JSON.stringify(product2)));
         // typeof JSON.parse(JSON.stringify(product2)) is an object
 
+
+        /* Auto-Boxing
+        when we use a primitive value as an object
+        it is automatically converted to an object
+        for example when we use a string as an object
+        we can use string methods on it
+        this has a property called length
+        */
+
+        console.log('hello'.length);
+        // this is a method of the string object
+        console.log('hello'.toUpperCase());
+
+        const object1={
+            message:'hello',
+        }
+        const object2=object1;
+        // this object2 is a reference to object1 which means
+        // if we change the value of object1 it will also change
+        // the value of object2
+        // so if we change the value of object1 it will also change
+        // the value of object2
+        // this is a shallow copy of object1
+        // so if we change the value of object1 it will not change
+        object1.message='hi';
+        console.log(object1);
+        console.log(object2);
+
+        const object3={
+            message:'hello',
+        }
+        // this is a deep copy of object1
+        // so if we compare the value of object3 and object1 
+        // it will not be true since they both have different reference
+        console.log(object1===object3);
+        // this is a shallow copy of object1
+        // so if we compare the value of object2 and object1
+        // it will be true since they both have same reference
+        // so if we change the value of object1 it will also change
+        // the value of object2
+        console.log(object2==object1);
+
+
+        const object4={
+            message:'hello',
+            price: 799
+        };
+        // const message = object4.message;
+
+        // this is a destructuring assignment
+        const {message,price}=object4;
+        console.log(message,price);
+
+        const object5={
+            message:message,
+        }
+        // this is a shorthand property name
+        // so if we have a variable with the same name as the property
+        // we can use the shorthand property name
+        console.log(object5);
+
+        const message1='hello';
+        const object6={
+            // message1: message1
+            message1,
+            // method: function(){
+            //     console.log('method');
+            // }
+            // this is a shorthand method 
+            method(){
+                console.log('method');
+            }
+        }
+        // this is a shorthand property name
+        console.log(object6);
+        object6.method();
+
+     
+
+
          
 
     </script>
