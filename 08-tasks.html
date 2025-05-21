@@ -7,6 +7,10 @@
   </head>
   <body>
     <h1>Tasks 8</h1>
+    <button onclick="
+     userMove('Heads');
+    ">Heads</button>
+    <button onclick="userMove('Tails')">Tails</button>
     <script>
       const product = {
         name: "basketball",
@@ -53,7 +57,32 @@
         .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
         .join(" ");
       console.log(greetProper);
-      console.log()
+
+
+      
+      
+        let score=
+       JSON.parse(localStorage.getItem('score')) || {
+          wins:0,
+          losses:0,
+         
+        };
+        
+        
+        function userMove(guess){
+          const randomNumber = Math.random();
+          const result = randomNumber<=0.5? 'Heads':'Tails';
+          if(guess===result){
+            score.wins++;
+
+          }
+          else{
+            score.losses++;
+          }
+          localStorage.setItem('score',JSON.stringify(score));
+          console.log(score);
+        }
+       
 
     </script>
   </body>

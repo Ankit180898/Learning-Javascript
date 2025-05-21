@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM</h1>
+    <p>DOM - Document Object Model is a programming interface for HTML and XML documents. 
+        It represents the page so that programs can change the document structure, 
+        style, and content. The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.</p>
+    <button>Hello</button>
+    <!-- This is a comment -->
+    <button class="js-button">Second Button</button>
+    <script>
+
+        /*
+        // get the title of the page
+        console.log(document.title);
+        document.title= 'Changed';
+        // get the body of the page
+        console.log(document.body);
+        // the HTML elements inside the javascript document is an object
+        console.log(typeof document.body);
+        // This controls all the HTML elements inside the body
+        document.body.innerHTML;
+        console.log(document.body.innerHTML);
+        // This will replace the HTML elements inside the body
+        document.body.innerHTML='Changed';
+        // This will add a new HTML element inside the body
+        document.body.innerHTML = '<button>Hello</button>';
+
+        // Methods are functions saved inside the object
+        // This method gets any element from 
+        // the page and put it inside javascript
+        // This method is used to get the first element 
+        // that matches the selector
+        console.log(document.querySelector('button'));
+
+        // every element has a property called innerHTML
+        // this property is used to get the HTML elements inside the element
+        console.log(document.querySelector('button').innerHTML);
+        // this will only change the text inside the button
+
+        */
+
+        document.querySelector('button')
+            .innerHTML = 'Changed';
+
+        document.querySelector('.js-button')
+            .innerHTML = 'Changed';
+
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement);
+
+        
+        
+
+
+        
+        /*
+      document.body.innerHTML = 'HELLO';
+      document.title = 'GOOD JOB';
+      */
+      
+      
+    </script>
+</body>
+</html>
