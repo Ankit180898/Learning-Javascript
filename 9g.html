@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9g Exercise</title>
+</head>
+<body>
+    <h1>9g Exercise</h1>
+    <p>Amazon Shipping Calculator</p>
+    <input class="js-cost-input" placeholder="Cost of order" onkeydown="handleCostKeydown(event)"/>
+    <p class="js-total-cost"></p>
+    <button onclick="calculateTotal()">Calculate</button>
+    <input class="js-input" onkeyup="
+    handleTypeKeyUp(event);
+    ">
+    <p class="js-type"></p>
+    <script>
+        function handleCostKeydown(event){
+            if(event.key === 'Enter'){
+                calculateTotal();
+            }
+        }
+        function calculateTotal(){
+            let cost = Number(document.querySelector('.js-cost-input').value) * 100;
+
+            if(cost<4000){
+                cost = cost + 1000;
+            }
+           
+
+            // convert to dollars 
+            document.querySelector('.js-total-cost').innerHTML = `Total cost: $${cost/100}`;
+
+
+        }
+        function handleTypeKeyUp(event){
+            const inputValue = event.target.value;
+            document.querySelector('.js-type').innerHTML = inputValue;
+        }
+
+    
+    </script>
+</body>
+</html>

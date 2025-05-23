@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
   </head>
+
   <body>
     <h1>Rock Paper Scissors</h1>
     <button
@@ -57,25 +58,25 @@
           losses: 0,
           ties: 0,
         };
-        updateScoreElement();
+      updateScoreElement();
 
       /*  
-      if (!score) {
-        // if not, initialize it
-        score = {
-          wins: 0,
-          losses: 0,
-          ties: 0,
-        };
-      } else {
-        // if it is, set the score to the value in local storage
-        score = {
-          wins: score.wins,
-          losses: score.losses,
-          ties: score.ties,
-        };
-      }
-        */
+    if (!score) {
+      // if not, initialize it
+      score = {
+        wins: 0,
+        losses: 0,
+        ties: 0,
+      };
+    } else {
+      // if it is, set the score to the value in local storage
+      score = {
+        wins: score.wins,
+        losses: score.losses,
+        ties: score.ties,
+      };
+    }
+      */
 
       function getComputerMove() {
         // function scope
@@ -132,15 +133,18 @@
         localStorage.setItem("score", JSON.stringify(score));
         updateScoreElement();
         document.querySelector(".js-result").innerHTML = result;
-        document.querySelector(".js-move").innerHTML = `You chose ${userMove} - Computer chose ${computerMove}.`;
-       
+        document.querySelector(
+          ".js-move"
+        ).innerHTML = `You chose ${userMove} - Computer chose ${computerMove}.`;
+
         return result;
         // it wont give anything after the return statement
         // console.log(result);
       }
-      function updateScoreElement(){
-        document.querySelector(".js-score")
-            .innerHTML= ` Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      function updateScoreElement() {
+        document.querySelector(
+          ".js-score"
+        ).innerHTML = ` Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
       }
     </script>
   </body>

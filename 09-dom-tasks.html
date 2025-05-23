@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Tasks</title>
+  </head>
+  <body>
+    <h1>Dom Tasks</h1>
+    <button>9a</button>
+    <button class="js-button" onclick="changeButtonText()">9b</button>
+    <button onclick="moveButton('heads')">Heads</button>
+    <button onclick="moveButton('tails')">Tails</button>
+    <p class="js-move"></p>
+    <input
+      placeholder="Name"
+      class="js-input"
+      onkeydown="
+     handleNameKeydown(event);
+    "
+    />
+    <button onclick="displayName()">Submit</button>
+    <p class="js-name"></p>
+
+    <script>
+      console.log(document.querySelector("button"));
+      function changeButtonText() {
+        document.querySelector(".js-button").innerHTML = "9b done!";
+      }
+      function moveButton(userMove) {
+        if (userMove === "heads") {
+          document.querySelector(".js-move").innerHTML = "You chose: Heads";
+        } else {
+          document.querySelector(".js-move").innerHTML = "You chose: Tails";
+        }
+      }
+      function handleNameKeydown(event) {
+        if (event.key === "Enter") {
+          displayName();
+        }
+      }
+      function displayName() {
+        const name = document.querySelector(".js-input").value;
+        document.querySelector(".js-name").innerHTML = `Your name is: ${name}`;
+      }
+    </script>
+  </body>
+</html>
