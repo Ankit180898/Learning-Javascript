@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Projects</title>
     <style>
-      body{
+      body {
         font-family: Arial;
       }
 
-      .subscribe-button{
-        border:none;
+      .subscribe-button {
+        border: none;
         background-color: black;
         color: white;
         padding-top: 10px;
@@ -30,12 +30,12 @@
       to override styles
       this is called a modifier class
       */
-      .is-subscribed{
-        background-color: rgb(240,240,240);
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
         color: black;
       }
 
-      .cost-input{
+      .cost-input {
         font-size: 15px;
         /* padding-top: 10px;
         padding-bottom: 10px;
@@ -43,7 +43,7 @@
         padding-right: 10px; */
         padding: 10px;
       }
-      .calculate{
+      .calculate {
         background-color: green;
         color: white;
         border: none;
@@ -52,13 +52,22 @@
         cursor: pointer;
       }
 
-      
+      .cost {
+        color: black;
+      }
+      .error {
+        color: red;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <h1>DOM Projects</h1>
     <p>YouTube Subscribe Button</p>
-    <button class="js-subscribe-button subscribe-button" onclick=" subscribe() ">
+    <button
+      class="js-subscribe-button subscribe-button"
+      onclick=" subscribe() "
+    >
       Subscribe
     </button>
     <p>Amazon Shipping Calculator</p>
@@ -76,23 +85,23 @@
     calculateTotal();
     
     "
-    class="calculate"
+      class="calculate"
     >
       Calculate
     </button>
-    <p class="js-cost"></p>
+    <p class="js-cost cost"></p>
     <p>Rock Paper Scissors</p>
     <a href="/08-rock-paper-scissors.html">Rock Paper Scissors</a>
     <script>
       String(24);
       // type coercion - automatic type conversion
       console.log("25" - 5);
-      // this behaves differently 
+      // this behaves differently
       // this will convert number to string
       console.log("25" + 5);
 
-      window.document
-      window.console.log('window');
+      window.document;
+      window.console.log("window");
 
       // window.alert("Hello World");
 
@@ -108,27 +117,34 @@
           buttonElement.innerText = "Subscribed";
           // add the class is-subscribed to the button element
           // this will change the styles of the button element
-          buttonElement.classList.add('is-subscribed');
+          buttonElement.classList.add("is-subscribed");
         } else {
           buttonElement.innerText = "Subscribe";
           // remove the class is-subscribed from the button element
-          buttonElement.classList.remove('is-subscribed');
+          buttonElement.classList.remove("is-subscribed");
         }
       }
 
       function calculateTotal() {
         const inputElement = document.querySelector(".js-input");
-        // get the value of the input element
-        // and convert it to a number
-        // the value of the input element is a string
         let cost = Number(inputElement.value);
 
-        if (cost < 40) {
+        const costElement = document.querySelector(".js-cost");
+
+        if (cost < 0) {
+            costElement.classList.add("error");
+          costElement.innerText = "Cost cannot be negative.";
+          return;
+        }
+
+        if (cost > 0 && cost < 40) {
+            costElement.classList.remove("error");
           cost = cost + 10;
         }
-        const costElement = document.querySelector(".js-cost");
+
         costElement.innerText = `Total Cost: $${cost}`;
       }
+      
     </script>
   </body>
 </html>

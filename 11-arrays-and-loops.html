@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+<body>
+    <script>
+        const myArray = [1, 2, 3, 4, 5];
+        console.log("Original Array:", myArray);
+        console.log("First Element:", myArray[0]);
+        // changing the first element
+        myArray[0]=99;
+        console.log("Modified Array:", myArray);
+        // in array we can put any type of data
+        const mixedArray = [1, "two", true, null, { name: "Ankit" }, [1, 2, 3]];
+        console.log("Mixed Array:", mixedArray);
+        console.log(typeof [1,2]);
+        console.log(Array.isArray([1,2])); // true
+        // Arrays are type of objects so we can use object methods
+        console.log("Array Length:", myArray.length);
+        // we can add values to an array
+        myArray.push(6);
+        console.log("Array after push:", myArray);
+        // we can remove values from an array from a given index 
+        myArray.splice(0,2); // removes 2 elements starting from index 0
+        console.log("Array after splice:", myArray);
+
+        <!-- Looping through an array -->
+        
+        let i =1;
+        // while loop
+        while(i<=5){
+            console.log(i);
+            i++;
+        }
+        // for loop
+        for(let i =1;i<=5;i++){
+            console.log(i);
+        }
+
+        let randomNumber = 0;
+        while(randomNumber < 0.5){
+            randomNumber = Math.random();
+        }
+        console.log("Random Number:", randomNumber);
+    </script>
+</body>
+</html>
