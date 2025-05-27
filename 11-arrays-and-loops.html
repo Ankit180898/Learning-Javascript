@@ -45,6 +45,15 @@
             randomNumber = Math.random();
         }
         console.log("Random Number:", randomNumber);
+
+        // Arrays are refrence types
+        const array1 = [1, 2, 3];
+        const array2 = array1; // array2 is a reference to the same array as array1
+        array2[0] = 99; // modifying array2 will also modify array1
+        console.log("Array1 after modifying Array2:", array1); // [99, 2, 3]
+        console.log("Array2 after modifying Array2:", array2); // [99, 2, 3]
+        array2= array1.splice();
+        console.log("Array2 after splice:", array2); // [99, 2, 3]
     </script>
 </body>
 </html>
