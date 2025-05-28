@@ -1,59 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arrays and Loops</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        const myArray = [1, 2, 3, 4, 5];
-        console.log("Original Array:", myArray);
-        console.log("First Element:", myArray[0]);
-        // changing the first element
-        myArray[0]=99;
-        console.log("Modified Array:", myArray);
-        // in array we can put any type of data
-        const mixedArray = [1, "two", true, null, { name: "Ankit" }, [1, 2, 3]];
-        console.log("Mixed Array:", mixedArray);
-        console.log(typeof [1,2]);
-        console.log(Array.isArray([1,2])); // true
-        // Arrays are type of objects so we can use object methods
-        console.log("Array Length:", myArray.length);
-        // we can add values to an array
-        myArray.push(6);
-        console.log("Array after push:", myArray);
-        // we can remove values from an array from a given index 
-        myArray.splice(0,2); // removes 2 elements starting from index 0
-        console.log("Array after splice:", myArray);
+      const myArray = [1, 2, 3, 4, 5];
+      console.log("Original Array:", myArray);
+      console.log("First Element:", myArray[0]);
+      // changing the first element
+      myArray[0] = 99;
+      console.log("Modified Array:", myArray);
+      // in array we can put any type of data
+      const mixedArray = [1, "two", true, null, { name: "Ankit" }, [1, 2, 3]];
+      console.log("Mixed Array:", mixedArray);
+      console.log(typeof [1, 2]);
+      console.log(Array.isArray([1, 2])); // true
+      // Arrays are type of objects so we can use object methods
+      console.log("Array Length:", myArray.length);
+      // we can add values to an array
+      myArray.push(6);
+      console.log("Array after push:", myArray);
+      // we can remove values from an array from a given index
+      myArray.splice(0, 2); // removes 2 elements starting from index 0
+      console.log("Array after splice:", myArray);
 
-        <!-- Looping through an array -->
-        
-        let i =1;
-        // while loop
-        while(i<=5){
-            console.log(i);
-            i++;
-        }
-        // for loop
-        for(let i =1;i<=5;i++){
-            console.log(i);
-        }
+      <!-- Looping through an array -->
 
-        let randomNumber = 0;
-        while(randomNumber < 0.5){
-            randomNumber = Math.random();
-        }
-        console.log("Random Number:", randomNumber);
+      let i = 1;
+      // while loop
+      while (i <= 5) {
+        console.log(i);
+        i++;
+      }
+      // for loop
+      for (let i = 1; i <= 5; i++) {
+        console.log(i);
+      }
 
-        // Arrays are refrence types
-        const array1 = [1, 2, 3];
-        const array2 = array1; // array2 is a reference to the same array as array1
-        array2[0] = 99; // modifying array2 will also modify array1
-        console.log("Array1 after modifying Array2:", array1); // [99, 2, 3]
-        console.log("Array2 after modifying Array2:", array2); // [99, 2, 3]
-        array2= array1.splice();
-        console.log("Array2 after splice:", array2); // [99, 2, 3]
+      let randomNumber = 0;
+      while (randomNumber < 0.5) {
+        randomNumber = Math.random();
+      }
+      console.log("Random Number:", randomNumber);
+
+      // Arrays are refrence types
+      const array1 = [1, 2, 3];
+      const array2 = array1; // array2 is a reference to the same array as array1
+      array2[0] = 99; // modifying array2 will also modify array1
+      console.log("Array1 after modifying Array2:", array1); // [99, 2, 3]
+      console.log("Array2 after modifying Array2:", array2); // [99, 2, 3]
+      // array2= array1.splice();
+      console.log("Array2 after splice:", array2); // [99, 2, 3]
+
+      // Destructuring arrays - It is a way to unpack values
+      // from arrays or properties from objects into
+      // distinct variables.
+      const [firstValue, secondValue] = [1, 2, 3];
+      console.log("First Value:", firstValue); // 1
+      console.log("Second Value:", secondValue); // 2
+
+      for (let i = 1; i <= 10; i++) {
+        if (i % 3 === 0) {
+          continue; // skips the iteration when i is 3
+        }
+        console.log(i);
+        if (i === 8) {
+          console.log("break at 8");
+          break; // breaks the loop when i is 8
+        }
+      }
+      let j = 1;
+      while (j <= 10) {
+        if (j % 3 === 0) {
+          // increment has to done manually
+          j++;
+          continue;
+        }
+        console.log(j);
+        j++;
+      }
+
+      function doubleArr(nums) {
+        const numsDoubled = [];
+
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] === 0) {
+            return numsDoubled; // another way of ending the loop
+          }
+          numsDoubled.push(nums[i] * 2);
+        }
+        return numsDoubled;
+      }
+      console.log(doubleArr([1, 0, 3]));
     </script>
-</body>
+  </body>
 </html>

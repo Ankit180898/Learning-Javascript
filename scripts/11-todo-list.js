@@ -1,5 +1,4 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
-;
 
 displayTodos();
 function addTodo() {
