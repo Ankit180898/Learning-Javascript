@@ -39,23 +39,7 @@ function displayTodos() {
         `;
     
     });
-    // for (let i = 0; i < todoList.length; i++) {
-    //     const todoObject = todoList[i];
-    //     // const { name } = todoObject;
-    //     // const { dueDate } = todoObject;
-    //     const { name, dueDate } = todoObject; // Destructuring assignment
-    //     if( !name || !dueDate) {
-    //         continue; // Skip empty todos
-    //     }
-    //     todoListElement.innerHTML += `
-    //     <div>${name}</div>
-    //     <div>${dueDate}</div>
-    //     <button class="delete-todo-button" onclick="removeTodo(${i},1)
-    //      displayTodos();
-    //     ">Delete
-    //     </button>
-    //     `;
-    // }
+
 }
 
 function removeTodo(index, count) {
