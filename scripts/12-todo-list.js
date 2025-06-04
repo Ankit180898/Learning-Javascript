@@ -23,7 +23,7 @@ function displayTodos() {
     let todoListElement = document.querySelector('.js-display-todos');
     todoListElement.innerHTML = '';
     
-    todoList.forEach(function(todoObject,index){
+    todoList.forEach((todoObject,index) =>{
         
         const { name, dueDate } = todoObject; // Destructuring assignment
         if(!name || !dueDate){
@@ -38,7 +38,7 @@ function displayTodos() {
         </button>
         `;
     
-    });
+});
 
 }
 

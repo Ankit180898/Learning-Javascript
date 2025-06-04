@@ -31,12 +31,12 @@
 
       let isAutoPlaying = false;
       let intervalId;
-      function autoPlay(){
+      function autoPlay() {
         const button = document.querySelector('.auto-play-button');
 
         if(!isAutoPlaying ){
           intervalId = setInterval(
-            function(){
+            () => {
               const playerMove = getComputerMove();
               getResult(playerMove);
             },1000
@@ -56,6 +56,16 @@
 
        
       }
+      document.querySelector('.js-rock-button').addEventListener('click',()=>{
+        getResult('rock');
+      });
+      document.querySelector('.js-paper-button').addEventListener('click',()=>{
+        getResult('paper');
+      });
+      document.querySelector('.js-scissors-button').addEventListener('click',()=>{
+        getResult('scissors');
+      });
+
 
       function getComputerMove() {
         // function scope
@@ -71,6 +81,8 @@
         }
         return computerMove;
       }
+
+
       function getResult(userMove) {
         const computerMove = getComputerMove();
         if (userMove === "rock") {
