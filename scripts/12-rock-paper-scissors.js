@@ -66,8 +66,19 @@
         getResult('scissors');
       });
 
-
+      document.body.addEventListener('keydown',(event)=>{
+        if(event.key==='r'){
+          getResult('rock');
+        }
+        else if(event.key==='p'){
+          getResult('paper');
+        }
+        else if(event.key==='s'){
+          getResult('scissors');
+        }
+      });
       function getComputerMove() {
+
         // function scope
         // local variables - can't be accessed
         // outside the function
