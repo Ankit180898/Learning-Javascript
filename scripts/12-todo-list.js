@@ -1,6 +1,9 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 displayTodos();
+document.querySelector('.js-add-todo-button').addEventListener('click',()=>{
+    addTodo();
+});
 function addTodo() {
     const inputElement = document.querySelector('.js-todo-input').value;
     const dueDateElement = document.querySelector('.js-due-date-input').value;
@@ -32,13 +35,22 @@ function displayTodos() {
         todoListElement.innerHTML += `
         <div>${name}</div>
         <div>${dueDate}</div>
-        <button class="delete-todo-button" onclick="removeTodo(${index},1)
-         displayTodos();
-        ">Delete
+        <button class="delete-todo-button js-delete-todo-button">Delete
         </button>
         `;
     
 });
+// we used querySelectorAll to get all the delete button and used forEach to loop 
+// through each button and remove the given data when delete button is clicked
+
+document.querySelectorAll('.js-delete-todo-button').forEach(
+    (deleteButton,index)=>{
+        deleteButton.addEventListener('click',()=>{
+            removeTodo(index,1);
+            displayTodos();
+        });
+    }
+);
 
 }
 
