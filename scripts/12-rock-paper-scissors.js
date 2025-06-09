@@ -28,7 +28,11 @@
       };
     }
       */
-
+    document.body.addEventListener('keydown',(event)=>{
+      if(event.key==='a'){
+        autoPlay();
+      }
+    });
       let isAutoPlaying = false;
       let intervalId;
       function autoPlay() {
@@ -76,7 +80,14 @@
         else if(event.key==='s'){
           getResult('scissors');
         }
+        else if(event.key==='a'){
+          autoPlay();
+        }
+        else if(event.key==='Backspace'){
+          resetScore();
+        }
       });
+   
       function getComputerMove() {
 
         // function scope
@@ -149,4 +160,12 @@
         document.querySelector(
           ".js-score"
         ).innerHTML = ` Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      }
+
+      function resetScore(){
+        score.wins=0;
+        score.losses=0;
+        score.ties=0;
+        localStorage.removeItem('score');
+        updateScoreElement();
       }
