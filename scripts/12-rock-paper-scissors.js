@@ -42,7 +42,7 @@
           intervalId = setInterval(
             () => {
               const playerMove = getComputerMove();
-              getResult(playerMove);
+              getMove(playerMove);
             },1000
           );
           isAutoPlaying=true;
@@ -61,24 +61,24 @@
        
       }
       document.querySelector('.js-rock-button').addEventListener('click',()=>{
-        getResult('rock');
+        getMove('rock');
       });
       document.querySelector('.js-paper-button').addEventListener('click',()=>{
-        getResult('paper');
+        getMove('paper');
       });
       document.querySelector('.js-scissors-button').addEventListener('click',()=>{
-        getResult('scissors');
+        getMove('scissors');
       });
 
       document.body.addEventListener('keydown',(event)=>{
         if(event.key==='r'){
-          getResult('rock');
+          getMove('rock');
         }
         else if(event.key==='p'){
-          getResult('paper');
+          getMove('paper');
         }
         else if(event.key==='s'){
-          getResult('scissors');
+          getMove('scissors');
         }
         else if(event.key==='a'){
           autoPlay();
@@ -105,7 +105,7 @@
       }
 
 
-      function getResult(userMove) {
+      function getMove(userMove) {
         const computerMove = getComputerMove();
         if (userMove === "rock") {
           if (computerMove === "scissors") {
