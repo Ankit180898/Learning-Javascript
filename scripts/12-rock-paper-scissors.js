@@ -71,18 +71,23 @@
       });
 
       document.body.addEventListener('keydown',(event)=>{
+        // 'r' for rock
         if(event.key==='r'){
           getMove('rock');
         }
+        // 'p' for paper
         else if(event.key==='p'){
           getMove('paper');
         }
+        // 's' for scissors
         else if(event.key==='s'){
           getMove('scissors');
         }
+        // 'a' for autoplay()
         else if(event.key==='a'){
           autoPlay();
         }
+        // 'Backspace' for resetScore()
         else if(event.key==='Backspace'){
           resetScore();
         }
